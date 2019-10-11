@@ -19,7 +19,7 @@ function createComponent(options) {
             const [root, setRoot] = useState(null);
 
             useEffect(() => {
-                if (node) {
+                if (node && typeof node.attachShadow === "function") {
                     const root = node.attachShadow({ mode, delegatesFocus });
                     styleSheets.length > 0 &&
                         (root.adoptedStyleSheets = styleSheets);
