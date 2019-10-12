@@ -21,7 +21,9 @@
     "react-dom": "^16.0.0"
   },
   "dependencies": {
-    "humps": "^2.0.1"
+    "@webcomponents/custom-elements": "^1.3.0",
+    "humps": "^2.0.1",
+    "proxy-polyfill": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

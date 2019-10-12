@@ -7,3 +7,6 @@ example/js/build.js
 
 # coverage
 .nyc_output/
+
+# misc
+.DS_Store

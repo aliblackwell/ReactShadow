@@ -2,6 +2,7 @@ import React, { useState, useEffect, forwardRef } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { decamelize } from 'humps';
+import ProxyPolyfill from 'proxy-polyfill/src/proxy';
 
 function ShadowContent({ root, children }) {
     return createPortal(children, root);
@@ -60,7 +61,7 @@ function createComponent(options) {
 const components = new Map();
 
 export function createProxy(target = {}) {
-    return new Proxy(target, {
+    return new ProxyPolyfill(target, {
         get: function get(_, name) {
             const tag = decamelize(name, { separator: '-' });
             if (!components.has(tag))
